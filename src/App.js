@@ -96,7 +96,7 @@ function App() {
         <h1 className={styles.robot}>🤖</h1>
         {robot === "" && (
           <p className={styles.pleaseSelect} onClick={uploadHandler}>
-            Please select a Image
+            Please select an Image
           </p>
         )}
         {robot === "selected" && (
