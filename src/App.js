@@ -3,6 +3,8 @@ import * as mobilenet from "@tensorflow-models/mobilenet";
 /* import "./App.css"; */
 import "@tensorflow/tfjs-backend-webgl";
 import styles from "./App.module.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 function App() {
   const [isModelLoading, setIsModelLoading] = useState(false);
@@ -56,8 +58,16 @@ function App() {
 
   if (isModelLoading) {
     return (
-      <div className={styles.container}>
+      <div className={styles.loaderContainer}>
         <h1>Loading...</h1>
+        <Loader
+          loaded={isModelLoading}
+          type="BallTriangle"
+          color="rgb(17, 87, 238)"
+          height={100}
+          width={100}
+          timeout={5000} //3 secs
+        />
       </div>
     );
   }
